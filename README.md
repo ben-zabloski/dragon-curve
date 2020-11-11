@@ -1,3 +1,10 @@
+# Dragon Curve
+
+This project can generate a Dragon Curve! It's currently set to draw a curve with a depth of 5.
+
+![Alt text](src/DragonCurve.png?raw=true "Dragon Curve Screenshot")
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
