@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useCallback, useEffect, useState } from "react";
+import { DragonCurve } from "./DragonCurve";
+import "./App.css";
 
 function App() {
+  const [viewElement, setViewElement] = useState();
+
+  const viewElementRef = useCallback((element) => {
+    setViewElement(element);
+  });
+
+  useEffect(() => {
+    if (!viewElement) return;
+
+    const application = new DragonCurve({ backgroundColor: 0xffffff });
+
+    viewElement.appendChild(application.view);
+  }, [viewElement]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>Dragon Curve</div>
+      <div ref={viewElementRef} />
     </div>
   );
 }
