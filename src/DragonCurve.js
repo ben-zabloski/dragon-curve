@@ -89,7 +89,7 @@ export class DragonCurve extends Application {
     const lines = [];
     const line = new Line(200, 300, 300, 300);
 
-    dragon(line, lines, 5);
+    dragon(line, lines, 10);
 
     const graphics = new Graphics();
     graphics.lineStyle(2, 0x333333, 1);
